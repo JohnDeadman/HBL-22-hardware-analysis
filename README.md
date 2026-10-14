@@ -49,7 +49,25 @@ The LM358 op-amp output can only source ~20–40 mA, which is not enough to driv
 
 ---
 
-## 4. Repository Structure
+## 4. Circuit Simulation & Waveforms
+
+The breathing behavior has been simulated using a Python script, computing the exponential rise/fall of the integration capacitor $V_C(t)$ and the proportional LED current $I_{LED}(t)$ based on the LM358 and S8050 configuration.
+
+![Breathing Waveforms](breathing_waveforms.png)
+
+### Running the Simulation
+To generate the waveform plot, ensure you have Python 3 installed along with `numpy` and `matplotlib`:
+
+```bash
+pip install numpy matplotlib
+python simulate_rc_breathing.py
+```
+
+---
+
+## 5. Repository Structure
 * `/20180110030354HBL-22-heart-shaped-breathing-LED-kit-.pdf` — Original schematic, PCB layout, and component assembly sheet.
 * `/photos` — *(Upcoming)* High-resolution macro inspection of THT solder joints and assembled PCB.
+  * ![Front PCB](photos/front_pcb.jpg)
+  * ![Back Solder](photos/back_solder.jpg)
 * `/cad` — *(Upcoming)* 2D TCVN orthographic projection (`ME2011`) & 3D enclosure model for the 50.7 × 50.7 mm PCB.
