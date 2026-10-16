@@ -65,7 +65,30 @@ python simulate_rc_breathing.py
 
 ---
 
-## 5. Repository Structure
+## 5. Assembly & Pre-Test Methodology
+Prior to full PCB assembly, a pre-test was conducted using an Arduino Uno R3 (using its 3.3V rail) and a breadboard. This allowed for the verification of the LEDs, resistors, and the 47µF capacitor. To ensure a smooth assembly process, low-profile passive components were soldered first before moving on to taller components.
+
+---
+
+## 6. Empirical Multimeter Measurements
+* **Supply Voltage:** 5.02 V DC
+* **Total Fluctuating Current:** 0.045 A – 0.065 A (45–65 mA)
+* **Estimated Power Consumption:** $P = V \times I \approx 0.25\text{ W}$
+* **Thermal Observation:** Components remained cool to the touch during operation.
+
+---
+
+## 7. Hardware Debugging & Rework Log
+During initial testing, one LED failed to illuminate. Diagnosis revealed the issue was caused by a combination of a cold solder joint and reversed anode/cathode polarity. This was successfully resolved by desoldering the component and correcting the polarity.
+
+### Future Mechatronics Upgrade Paths
+* **Custom PCB Design:** Utilizing KiCad or Altium for a refined custom board layout.
+* **Microcontroller Integration:** Implementing MCU-based PWM dimming for precise breathing control.
+* **Modern Interfaces:** Adding capacitive touch controls and USB-C Li-ion battery charging capabilities.
+
+---
+
+## 8. Repository Structure
 * `/20180110030354HBL-22-heart-shaped-breathing-LED-kit-.pdf` — Original schematic, PCB layout, and component assembly sheet.
 * `/photos` — *(Upcoming)* High-resolution macro inspection of THT solder joints and assembled PCB.
   * ![Front PCB](photos/front_pcb.jpg)
